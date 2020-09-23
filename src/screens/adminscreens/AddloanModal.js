@@ -21,6 +21,20 @@ import DropDownPicker from 'react-native-dropdown-picker';
 export class AddloanModal extends Component {
   state = {
     Loancollection: 'Daily',
+    LoanNo: '',
+    PrincipalAmount: '',
+    Intrest: '',
+    Totalloan: '',
+    DocumentCharge: '',
+    Netpayable: '',
+    NoOfWeek: '',
+    DueAmount: '',
+    DueStartFrom: '',
+    LoanMature: '',
+    Remark: '',
+    GuranterName: '',
+    Guranteraddress: '',
+    GuranterPhone: '',
   };
   render() {
     return (
