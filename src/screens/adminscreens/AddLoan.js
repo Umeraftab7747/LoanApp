@@ -71,7 +71,7 @@ export class AddLoan extends Component {
         title: 'jain',
       },
     ],
-    modalvisible: false,
+
     selected: '',
   };
 
@@ -85,20 +85,23 @@ export class AddLoan extends Component {
     });
     this.setState({FilterData: newData});
   };
-
-  removeByIndex = (id) => {
+  removeByItem = (item) => {
     const data = this.state.FilterData;
 
-    if (id > -1) {
-      data.splice(id, 1);
+    const index = data.indexOf(item);
+
+    if (index > -1) {
+      data.splice(index, 1);
     }
 
     this.setState({FilterData: data});
   };
 
-  renderItem = (item, index) => (
+  renderItem = (item) => (
     <TouchableOpacity
-      onPress={() => this.setState({modalvisible: true, selected: item})}
+      onLongPress={() => {
+        this.removeByItem(item);
+      }}
       style={styles.FlatContainer}>
       <View style={styles.right}>
         <Text style={styles.ltxt}>Loan no: {item.id}</Text>
