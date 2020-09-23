@@ -8,6 +8,7 @@ import {Signup} from '../screens/login';
 import {Signin} from '../screens/login';
 import {Dashboard} from '../screens/adminscreens';
 import {AddCustomer} from '../screens/adminscreens';
+import {AddLoan} from '../screens/adminscreens';
 
 export default class Stacknavigator extends Component {
   render() {
@@ -15,13 +16,18 @@ export default class Stacknavigator extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="AddCustomer"
-            component={AddCustomer}
+            name="AddLoan"
+            component={AddLoan}
             options={{headerShown: false}}
           />
           <Stack.Screen
             name="Dashboard"
             component={Dashboard}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="AddCustomer"
+            component={AddCustomer}
             options={{headerShown: false}}
           />
           <Stack.Screen
