@@ -15,7 +15,7 @@ import {
 } from 'react-native-responsive-screen';
 import {Icon} from 'react-native-elements';
 import {PrimaryColor} from '../color';
-import {Apptext, Appbtn, Navheader} from '../../components';
+import {Apptext, Appbtn, Navheader, DatePicker} from '../../components';
 import DropDownPicker from 'react-native-dropdown-picker';
 
 export class AddloanModal extends Component {
@@ -61,7 +61,6 @@ export class AddloanModal extends Component {
               />
             </View>
             {/* end */}
-            <Apptext name={'Loan Date'} />
             <Apptext name={'Loan No'} />
             <Apptext name={'Principal Amount'} />
             <Apptext name={'Intrest'} />
@@ -70,13 +69,20 @@ export class AddloanModal extends Component {
             <Apptext name={'Net payable'} />
             <Apptext name={'No of Weeks'} />
             <Apptext name={'due Amount'} />
-            <Apptext name={'due Start from'} />
-            <Apptext name={'Loan Mature'} />
+            <View style={styles.drop}>
+              <Text style={styles.txtcollection}>Due start from</Text>
+              <DatePicker title={'Calander'} />
+            </View>
+            <View style={styles.drop}>
+              <Text style={styles.txtcollection}>Loan mature</Text>
+              <DatePicker title={'Calander'} />
+            </View>
             <Apptext name={'Remark'} />
             <Text style={styles.gruntartxt}>GRUANTAR DETAILS</Text>
             <Apptext name={'Gurantar name'} />
             <Apptext name={'Gurantar Address'} />
             <Apptext name={'Gurantar Phone'} />
+
             <Appbtn text={'Submit'} />
           </View>
         </View>
@@ -103,9 +109,12 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red',
     marginTop: h('3%'),
     flexDirection: 'row',
+    marginBottom: h('3%'),
   },
   txtcollection: {
     color: 'white',
+    fontSize: h('2.5%'),
+    fontWeight: 'bold',
   },
   gruntartxt: {
     color: 'white',
