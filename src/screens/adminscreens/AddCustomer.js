@@ -1,12 +1,6 @@
 /* eslint-disable react/self-closing-comp */
 import React, {Component} from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  ImageBackground,
-} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 import {
   widthPercentageToDP as w,
@@ -19,7 +13,18 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 export class AddCustomer extends Component {
   state = {
+    firstname: '',
     country: 'S/o',
+    lastname: '',
+    street: '',
+    Village: '',
+    postOffice: '',
+    city: '',
+    distric: '',
+    Mobile: '',
+    phone: '',
+    area: '',
+    workType: '',
   };
   render() {
     return (
