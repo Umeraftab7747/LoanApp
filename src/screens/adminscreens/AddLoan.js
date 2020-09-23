@@ -118,7 +118,12 @@ export class AddLoan extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Navheader name={'Customers'} />
+        <Navheader
+          onPress={() => {
+            this.props.navigation.goBack('Dashboard');
+          }}
+          name={'Customers'}
+        />
         <View style={styles.middle}>
           <Searchbar
             name={'Search'}

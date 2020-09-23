@@ -46,7 +46,12 @@ export class AddloanModal extends Component {
     return (
       <ScrollView>
         <View style={styles.container}>
-          <Navheader name={'Add Loan'} />
+          <Navheader
+            onPress={() => {
+              this.props.navigation.goBack('Dashboard');
+            }}
+            name={'Add Loan'}
+          />
           <View style={styles.scrollview}>
             {/* start */}
             <View style={styles.drop}>
