@@ -14,9 +14,8 @@ import {
 } from 'react-native-responsive-screen';
 import {KeyboardAwareScrollView} from '@codler/react-native-keyboard-aware-scroll-view';
 import {PrimaryColor} from '../color';
-import {Apptext, Appbtn} from '../../components';
+import {Apptext, Appbtn, Navheader} from '../../components';
 import DropDownPicker from 'react-native-dropdown-picker';
-import {Icon} from 'react-native-elements';
 
 export class AddCustomer extends Component {
   state = {
@@ -26,9 +25,7 @@ export class AddCustomer extends Component {
     return (
       <KeyboardAwareScrollView>
         <View style={styles.container}>
-          <View style={styles.top}>
-            <Text style={styles.Singntxt}>Add Customer</Text>
-          </View>
+          <Navheader name={'ADD CUSTOMER'} />
           <View style={styles.middle}>
             <Apptext name={'Customer FirstName'} />
             {/* name */}
@@ -88,13 +85,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: PrimaryColor,
-  },
-  top: {
-    backgroundColor: 'white',
-    width: w('100%'),
-    height: h('6%'),
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   middle: {
     // backgroundColor: 'yellow',
