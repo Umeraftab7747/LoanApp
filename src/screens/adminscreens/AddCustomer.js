@@ -30,7 +30,12 @@ export class AddCustomer extends Component {
     return (
       <KeyboardAwareScrollView>
         <View style={styles.container}>
-          <Navheader name={'ADD CUSTOMER'} />
+          <Navheader
+            onPress={() => {
+              this.props.navigation.goBack('Dashboard');
+            }}
+            name={'ADD CUSTOMER'}
+          />
           <View style={styles.middle}>
             <Apptext name={'Customer FirstName'} />
             {/* name */}

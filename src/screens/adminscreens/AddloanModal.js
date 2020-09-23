@@ -35,7 +35,13 @@ export class AddloanModal extends Component {
     GuranterName: '',
     Guranteraddress: '',
     GuranterPhone: '',
+    txt: [],
   };
+  componentDidMount = () => {
+    const xyz = this.props.route.params.navParams;
+    this.setState({txt: xyz});
+  };
+
   render() {
     return (
       <ScrollView>
@@ -92,7 +98,7 @@ export class AddloanModal extends Component {
               <DatePicker title={'Calander'} />
             </View>
             <Apptext name={'Remark'} />
-            <Text style={styles.gruntartxt}>GRUANTAR DETAILS</Text>
+            <Text style={styles.gruntartxt}>Gurantar</Text>
             <Apptext name={'Gurantar name'} />
             <Apptext name={'Gurantar Address'} />
             <Apptext name={'Gurantar Phone'} />

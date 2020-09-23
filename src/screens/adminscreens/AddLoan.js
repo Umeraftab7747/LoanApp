@@ -99,8 +99,13 @@ export class AddLoan extends Component {
 
   renderItem = (item) => (
     <TouchableOpacity
-      onLongPress={() => {
-        this.removeByItem(item);
+      // onLongPress={() => {
+      //   this.removeByItem(item);
+      // }}
+      onPress={() => {
+        this.props.navigation.navigate('AddloanModal', {
+          navParams: item,
+        });
       }}
       style={styles.FlatContainer}>
       <View style={styles.right}>

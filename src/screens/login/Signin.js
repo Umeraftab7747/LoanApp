@@ -30,7 +30,12 @@ export class Signin extends Component {
             txtcolor={PrimaryColor}
             secureTextEntry={true}
           />
-          <Appbtn text={'Signin'} />
+          <Appbtn
+            onPress={() => {
+              this.props.navigation.replace('Dashboard');
+            }}
+            text={'Signin'}
+          />
         </View>
         <View style={styles.bottom}>
           <TouchableOpacity style={styles.bottomview}>
