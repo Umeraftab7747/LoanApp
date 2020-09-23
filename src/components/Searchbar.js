@@ -24,6 +24,7 @@ export class Searchbar extends Component {
           style={styles.txtinput}
           placeholder={this.props.name}
           placeholderTextColor={this.props.txtcolor}
+          onChangeText={this.props.onChangeText}
         />
         <TouchableOpacity style={styles.icon}>
           <Icon
