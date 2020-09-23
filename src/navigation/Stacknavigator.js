@@ -9,12 +9,18 @@ import {Signin} from '../screens/login';
 import {Dashboard} from '../screens/adminscreens';
 import {AddCustomer} from '../screens/adminscreens';
 import {AddLoan} from '../screens/adminscreens';
+import {AddloanModal} from '../screens/adminscreens';
 
 export default class Stacknavigator extends Component {
   render() {
     return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="AddloanModal"
+            component={AddloanModal}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="AddLoan"
             component={AddLoan}

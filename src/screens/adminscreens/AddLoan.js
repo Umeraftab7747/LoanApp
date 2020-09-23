@@ -113,7 +113,7 @@ export class AddLoan extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Navheader name={'Add Loan'} />
+        <Navheader name={'Customers'} />
         <View style={styles.middle}>
           <Searchbar
             name={'Search'}

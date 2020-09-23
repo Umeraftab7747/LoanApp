@@ -16,11 +16,10 @@ import {PrimaryColor} from '../screens/color';
 import {Icon} from 'react-native-elements';
 
 export class Navheader extends Component {
-  
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.right}>
+        <TouchableOpacity {...this.props} style={styles.right}>
           <Icon
             // reverse
             name="arrow-back-sharp"
