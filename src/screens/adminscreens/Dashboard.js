@@ -69,7 +69,11 @@ export class Dashboard extends Component {
             {/* 1 */}
             <View style={styles.ContainerView}>
               {/* btn1 */}
-              <TouchableOpacity style={styles.btnContainrs}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.props.navigation.navigate('Customerlist');
+                }}
+                style={styles.btnContainrs}>
                 <View style={styles.upper}>
                   <Icon
                     reverse

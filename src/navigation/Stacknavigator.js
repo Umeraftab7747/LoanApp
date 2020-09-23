@@ -10,6 +10,8 @@ import {Dashboard} from '../screens/adminscreens';
 import {AddCustomer} from '../screens/adminscreens';
 import {AddLoan} from '../screens/adminscreens';
 import {AddloanModal} from '../screens/adminscreens';
+import {Customerlist} from '../screens/adminscreens';
+import {CustomerlistModel} from '../screens/adminscreens';
 
 export default class Stacknavigator extends Component {
   render() {
@@ -17,15 +19,26 @@ export default class Stacknavigator extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="Signin"
-            component={Signin}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
             name="Dashboard"
             component={Dashboard}
             options={{headerShown: false}}
           />
+          <Stack.Screen
+            name="Customerlist"
+            component={Customerlist}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="CustomerlistModel"
+            component={CustomerlistModel}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Signin"
+            component={Signin}
+            options={{headerShown: false}}
+          />
+
           <Stack.Screen
             name="AddloanModal"
             component={AddloanModal}
