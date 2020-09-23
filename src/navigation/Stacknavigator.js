@@ -7,12 +7,18 @@ const Stack = createStackNavigator();
 import {Signup} from '../screens/login';
 import {Signin} from '../screens/login';
 import {Dashboard} from '../screens/adminscreens';
+import {AddCustomer} from '../screens/adminscreens';
 
 export default class Stacknavigator extends Component {
   render() {
     return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="AddCustomer"
+            component={AddCustomer}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="Dashboard"
             component={Dashboard}
