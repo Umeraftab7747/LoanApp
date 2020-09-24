@@ -8,3 +8,4 @@ export {Loanlist} from './Loanlist';
 export {LoanDetails} from './LoanDetails';
 export {Agents} from './Agents';
 export {Paymentlist} from './Paymentlist';
+export {PaymentEntry} from './PaymentEntry';

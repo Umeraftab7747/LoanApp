@@ -27,8 +27,8 @@ export class Paymentlist extends Component {
         lastname: 'xyz',
         city: 'Abc',
         phone: 'xxx-xxx-xxx',
-        collectionType: '',
-        dueAmount: '',
+        collectionType: 'Weekly',
+        dueAmount: '4442',
       },
       {
         id: '2',
@@ -36,8 +36,8 @@ export class Paymentlist extends Component {
         lastname: 'xyz',
         city: 'Abc',
         phone: 'xxx-xxx-xxx',
-        collectionType: '',
-        dueAmount: '',
+        collectionType: 'daily',
+        dueAmount: '55112',
       },
       {
         id: '3',
@@ -45,8 +45,8 @@ export class Paymentlist extends Component {
         lastname: 'xyz',
         city: 'Abc',
         phone: 'xxx-xxx-xxx',
-        collectionType: '',
-        dueAmount: '',
+        collectionType: 'monthly',
+        dueAmount: '1200',
       },
       {
         id: '4',
@@ -54,8 +54,8 @@ export class Paymentlist extends Component {
         lastname: 'xyz',
         city: 'Abc',
         phone: 'xxx-xxx-xxx',
-        collectionType: '',
-        dueAmount: '',
+        collectionType: 'monthly',
+        dueAmount: '5555',
       },
       {
         id: '5',
@@ -63,8 +63,8 @@ export class Paymentlist extends Component {
         lastname: 'xyz',
         city: 'Abc',
         phone: 'xxx-xxx-xxx',
-        collectionType: '',
-        dueAmount: '',
+        collectionType: 'daily',
+        dueAmount: '5212',
       },
       {
         id: '6',
@@ -72,8 +72,8 @@ export class Paymentlist extends Component {
         lastname: 'xyz',
         city: 'Abc',
         phone: 'xxx-xxx-xxx',
-        collectionType: '',
-        dueAmount: '',
+        collectionType: 'monthly',
+        dueAmount: '4212',
       },
     ],
     FilterData: [
@@ -83,8 +83,8 @@ export class Paymentlist extends Component {
         lastname: 'xyz',
         city: 'Abc',
         phone: 'xxx-xxx-xxx',
-        collectionType: '',
-        dueAmount: '',
+        collectionType: 'Weekly',
+        dueAmount: '4442',
       },
       {
         id: '2',
@@ -92,8 +92,8 @@ export class Paymentlist extends Component {
         lastname: 'xyz',
         city: 'Abc',
         phone: 'xxx-xxx-xxx',
-        collectionType: '',
-        dueAmount: '',
+        collectionType: 'daily',
+        dueAmount: '55112',
       },
       {
         id: '3',
@@ -101,8 +101,8 @@ export class Paymentlist extends Component {
         lastname: 'xyz',
         city: 'Abc',
         phone: 'xxx-xxx-xxx',
-        collectionType: '',
-        dueAmount: '',
+        collectionType: 'monthly',
+        dueAmount: '1200',
       },
       {
         id: '4',
@@ -110,8 +110,8 @@ export class Paymentlist extends Component {
         lastname: 'xyz',
         city: 'Abc',
         phone: 'xxx-xxx-xxx',
-        collectionType: '',
-        dueAmount: '',
+        collectionType: 'monthly',
+        dueAmount: '5555',
       },
       {
         id: '5',
@@ -119,8 +119,8 @@ export class Paymentlist extends Component {
         lastname: 'xyz',
         city: 'Abc',
         phone: 'xxx-xxx-xxx',
-        collectionType: '',
-        dueAmount: '',
+        collectionType: 'daily',
+        dueAmount: '5212',
       },
       {
         id: '6',
@@ -128,8 +128,8 @@ export class Paymentlist extends Component {
         lastname: 'xyz',
         city: 'Abc',
         phone: 'xxx-xxx-xxx',
-        collectionType: '',
-        dueAmount: '',
+        collectionType: 'monthly',
+        dueAmount: '4212',
       },
     ],
 
@@ -152,7 +152,7 @@ export class Paymentlist extends Component {
       //   this.removeByItem(item);
       // }}
       onPress={() => {
-        this.props.navigation.navigate('LoanDetails', {
+        this.props.navigation.navigate('PaymentEntry', {
           navParams: item,
         });
       }}
