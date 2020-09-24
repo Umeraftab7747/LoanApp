@@ -87,7 +87,11 @@ export class Dashboard extends Component {
                 </View>
               </TouchableOpacity>
               {/* btn2 */}
-              <TouchableOpacity style={styles.btnContainrs}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.props.navigation.navigate('Loanlist');
+                }}
+                style={styles.btnContainrs}>
                 <View style={styles.upper}>
                   <Icon
                     reverse

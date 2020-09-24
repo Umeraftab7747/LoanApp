@@ -12,6 +12,8 @@ import {AddLoan} from '../screens/adminscreens';
 import {AddloanModal} from '../screens/adminscreens';
 import {Customerlist} from '../screens/adminscreens';
 import {CustomerlistModel} from '../screens/adminscreens';
+import {Loanlist} from '../screens/adminscreens';
+import {LoanDetails} from '../screens/adminscreens';
 
 export default class Stacknavigator extends Component {
   render() {
@@ -23,6 +25,17 @@ export default class Stacknavigator extends Component {
             component={Dashboard}
             options={{headerShown: false}}
           />
+          <Stack.Screen
+            name="Loanlist"
+            component={Loanlist}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="LoanDetails"
+            component={LoanDetails}
+            options={{headerShown: false}}
+          />
+
           <Stack.Screen
             name="Customerlist"
             component={Customerlist}

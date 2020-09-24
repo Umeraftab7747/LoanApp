@@ -3,21 +3,22 @@ import React, {Component} from 'react';
 import {
   StyleSheet,
   View,
-  FlatList,
   Text,
-  Modal,
   TouchableOpacity,
+  FlatList,
+  ScrollView,
 } from 'react-native';
 
 import {
   widthPercentageToDP as w,
   heightPercentageToDP as h,
 } from 'react-native-responsive-screen';
+import {KeyboardAwareScrollView} from '@codler/react-native-keyboard-aware-scroll-view';
 import {PrimaryColor} from '../color';
-import {Searchbar, Appbtn, Navheader} from '../../components';
-import DropDownPicker from 'react-native-dropdown-picker';
+import {ApptextInput, Appbtn, Navheader, Searchbar} from '../../components';
+import {Icon} from 'react-native-elements';
 
-export class Customerlist extends Component {
+export class Loanlist extends Component {
   state = {
     DATA: [
       {
@@ -85,61 +86,48 @@ export class Customerlist extends Component {
     });
     this.setState({FilterData: newData});
   };
-  removeByItem = (item) => {
-    const data = this.state.FilterData;
-
-    const index = data.indexOf(item);
-
-    if (index > -1) {
-      data.splice(index, 1);
-    }
-
-    this.setState({FilterData: data});
-  };
-
   renderItem = (item) => (
     <TouchableOpacity
       // onLongPress={() => {
       //   this.removeByItem(item);
       // }}
       onPress={() => {
-        this.props.navigation.navigate('CustomerlistModel', {
+        this.props.navigation.navigate('LoanDetails', {
           navParams: item,
         });
       }}
       style={styles.FlatContainer}>
       <View style={styles.right}>
+        <Text style={styles.ltxt}>Loan no: {item.id}</Text>
         <Text style={styles.Ntxt}>Name: {item.title}</Text>
       </View>
       <View style={styles.left}></View>
     </TouchableOpacity>
   );
+
   render() {
     return (
       <View style={styles.container}>
         <Navheader
+          name={'Loan List'}
           onPress={() => {
-            this.props.navigation.goBack();
+            this.props.navigation.goBack('Dashboard');
           }}
-          name={'Customer List'}
         />
-        <View style={styles.middle}>
+        <View style={styles.mainConatiner}>
           <Searchbar
-            name={'Search'}
+            name={'Search Loan list'}
             txtcolor={PrimaryColor}
             onChangeText={(text) => this.searching(text)}
           />
+          <View style={styles.flatlistContainer}>
+            <FlatList
+              data={this.state.FilterData}
+              renderItem={({item}) => this.renderItem(item)}
+              keyExtractor={(item) => item.id}
+            />
+          </View>
         </View>
-        {/* flatlist */}
-        <FlatList
-          data={this.state.FilterData}
-          renderItem={({item}) => this.renderItem(item)}
-          keyExtractor={(item) => item.id}
-        />
-        {/* modal */}
-
-        {/* end */}
-        <View style={styles.last}></View>
       </View>
     );
   }
@@ -149,10 +137,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: PrimaryColor,
   },
-  middle: {
-    // backgroundColor: 'yellow',
-
+  mainConatiner: {
+    // backgroundColor: 'red',
+    width: w('100%'),
+    height: h('100%'),
     alignItems: 'center',
+  },
+  flatlistContainer: {
+    // backgroundColor: 'red',
+    width: '100%',
+    height: h('81%'),
   },
   FlatContainer: {
     backgroundColor: 'white',
