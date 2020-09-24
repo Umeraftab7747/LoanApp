@@ -14,6 +14,7 @@ import {Customerlist} from '../screens/adminscreens';
 import {CustomerlistModel} from '../screens/adminscreens';
 import {Loanlist} from '../screens/adminscreens';
 import {LoanDetails} from '../screens/adminscreens';
+import {Agents} from '../screens/adminscreens';
 
 export default class Stacknavigator extends Component {
   render() {
@@ -26,6 +27,11 @@ export default class Stacknavigator extends Component {
             options={{headerShown: false}}
           />
           <Stack.Screen
+            name="Agents"
+            component={Agents}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
             name="Loanlist"
             component={Loanlist}
             options={{headerShown: false}}
@@ -35,7 +41,6 @@ export default class Stacknavigator extends Component {
             component={LoanDetails}
             options={{headerShown: false}}
           />
-
           <Stack.Screen
             name="Customerlist"
             component={Customerlist}
@@ -51,7 +56,6 @@ export default class Stacknavigator extends Component {
             component={Signin}
             options={{headerShown: false}}
           />
-
           <Stack.Screen
             name="AddloanModal"
             component={AddloanModal}
@@ -62,13 +66,11 @@ export default class Stacknavigator extends Component {
             component={AddLoan}
             options={{headerShown: false}}
           />
-
           <Stack.Screen
             name="AddCustomer"
             component={AddCustomer}
             options={{headerShown: false}}
           />
-
           <Stack.Screen
             name="Signup"
             component={Signup}
