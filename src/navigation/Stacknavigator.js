@@ -26,6 +26,11 @@ export default class Stacknavigator extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
+            name="Dashboard"
+            component={Dashboard}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
             name="PendingPaymentlist"
             component={PendingPaymentlist}
             options={{headerShown: false}}
@@ -35,11 +40,7 @@ export default class Stacknavigator extends Component {
             component={PaymentListDetails}
             options={{headerShown: false}}
           />
-          <Stack.Screen
-            name="Dashboard"
-            component={Dashboard}
-            options={{headerShown: false}}
-          />
+
           <Stack.Screen
             name="Paymentlist"
             component={Paymentlist}
