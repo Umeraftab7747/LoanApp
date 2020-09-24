@@ -17,12 +17,29 @@ import {LoanDetails} from '../screens/adminscreens';
 import {Agents} from '../screens/adminscreens';
 import {Paymentlist} from '../screens/adminscreens';
 import {PaymentEntry} from '../screens/adminscreens';
+import {PendingPaymentlist} from '../screens/adminscreens';
+import {PaymentListDetails} from '../screens/adminscreens';
 
 export default class Stacknavigator extends Component {
   render() {
     return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="PendingPaymentlist"
+            component={PendingPaymentlist}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="PaymentListDetails"
+            component={PaymentListDetails}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Dashboard"
+            component={Dashboard}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="Paymentlist"
             component={Paymentlist}
@@ -33,11 +50,7 @@ export default class Stacknavigator extends Component {
             component={PaymentEntry}
             options={{headerShown: false}}
           />
-          <Stack.Screen
-            name="Dashboard"
-            component={Dashboard}
-            options={{headerShown: false}}
-          />
+
           <Stack.Screen
             name="Agents"
             component={Agents}
