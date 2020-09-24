@@ -6,7 +6,7 @@ import {
   Text,
   TouchableOpacity,
   FlatList,
-  ScrollView,
+  Modal,
 } from 'react-native';
 
 import {
@@ -29,6 +29,7 @@ export class Paymentlist extends Component {
         phone: 'xxx-xxx-xxx',
         collectionType: 'Weekly',
         dueAmount: '4442',
+        dueStart: '20-sep-2019',
       },
       {
         id: '2',
@@ -38,6 +39,7 @@ export class Paymentlist extends Component {
         phone: 'xxx-xxx-xxx',
         collectionType: 'daily',
         dueAmount: '55112',
+        dueStart: '20-sep-2019',
       },
       {
         id: '3',
@@ -47,6 +49,7 @@ export class Paymentlist extends Component {
         phone: 'xxx-xxx-xxx',
         collectionType: 'monthly',
         dueAmount: '1200',
+        dueStart: '20-sep-2019',
       },
       {
         id: '4',
@@ -56,6 +59,7 @@ export class Paymentlist extends Component {
         phone: 'xxx-xxx-xxx',
         collectionType: 'monthly',
         dueAmount: '5555',
+        dueStart: '20-sep-2019',
       },
       {
         id: '5',
@@ -65,6 +69,7 @@ export class Paymentlist extends Component {
         phone: 'xxx-xxx-xxx',
         collectionType: 'daily',
         dueAmount: '5212',
+        dueStart: '20-sep-2019',
       },
       {
         id: '6',
@@ -74,6 +79,7 @@ export class Paymentlist extends Component {
         phone: 'xxx-xxx-xxx',
         collectionType: 'monthly',
         dueAmount: '4212',
+        dueStart: '20-sep-2019',
       },
     ],
     FilterData: [
@@ -85,6 +91,7 @@ export class Paymentlist extends Component {
         phone: 'xxx-xxx-xxx',
         collectionType: 'Weekly',
         dueAmount: '4442',
+        dueStart: '20-sep-2019',
       },
       {
         id: '2',
@@ -94,6 +101,7 @@ export class Paymentlist extends Component {
         phone: 'xxx-xxx-xxx',
         collectionType: 'daily',
         dueAmount: '55112',
+        dueStart: '20-sep-2019',
       },
       {
         id: '3',
@@ -103,6 +111,7 @@ export class Paymentlist extends Component {
         phone: 'xxx-xxx-xxx',
         collectionType: 'monthly',
         dueAmount: '1200',
+        dueStart: '20-sep-2019',
       },
       {
         id: '4',
@@ -112,6 +121,7 @@ export class Paymentlist extends Component {
         phone: 'xxx-xxx-xxx',
         collectionType: 'monthly',
         dueAmount: '5555',
+        dueStart: '20-sep-2019',
       },
       {
         id: '5',
@@ -121,6 +131,7 @@ export class Paymentlist extends Component {
         phone: 'xxx-xxx-xxx',
         collectionType: 'daily',
         dueAmount: '5212',
+        dueStart: '20-sep-2019',
       },
       {
         id: '6',
@@ -130,10 +141,12 @@ export class Paymentlist extends Component {
         phone: 'xxx-xxx-xxx',
         collectionType: 'monthly',
         dueAmount: '4212',
+        dueStart: '20-sep-2019',
       },
     ],
 
     selected: '',
+    modalVisible: false,
   };
 
   searching = (text) => {
@@ -152,9 +165,12 @@ export class Paymentlist extends Component {
       //   this.removeByItem(item);
       // }}
       onPress={() => {
-        this.props.navigation.navigate('PaymentEntry', {
-          navParams: item,
+        this.setState({selected: item}, () => {
+          this.setState({modalVisible: true});
         });
+        // this.props.navigation.navigate('PaymentEntry', {
+        //   navParams: item,
+        // });
       }}
       style={styles.FlatContainer}>
       <View style={styles.right}>
@@ -187,6 +203,53 @@ export class Paymentlist extends Component {
               keyExtractor={(item) => item.id}
             />
           </View>
+          {/* modal */}
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={this.state.modalVisible}
+            onRequestClose={() => {
+              this.setState({modalVisible: false});
+            }}>
+            <View style={styles.ModalViewContainer}>
+              <View style={styles.upermodal}>
+                <Text style={styles.modltxtHeadding}>
+                  Name: {this.state.selected.title}
+                </Text>
+                <View style={styles.ModalView}>
+                  <Text style={styles.modaltxt}>
+                    Due Start: {this.state.selected.dueStart}
+                  </Text>
+                  <Text style={styles.modaltxt}>
+                    Due Amount: {this.state.selected.dueAmount}
+                  </Text>
+                </View>
+                <Text style={styles.modaltxt}>Loan mature: 4192 INR</Text>
+              </View>
+              <View style={styles.middlemodal}>
+                <Text style={styles.modaltxt}>BALANCE: 4425inr</Text>
+                <Text style={styles.modaltxt}>PENDING: 1000inr</Text>
+                <Text style={styles.modaltxt}>RECIEVE AMOUNT: 3425inr</Text>
+                <Text style={styles.modaltxt}>PAID: 3425inr</Text>
+                <Text style={styles.modaltxt}>Loan Amount: 5425inr</Text>
+                <Text style={styles.modaltxt}>Total dues: 6000inr</Text>
+              </View>
+              <View style={styles.Bottommodal}>
+                <TouchableOpacity
+                  onPress={() => {
+                    this.setState({modalVisible: false}, () => {
+                      this.props.navigation.navigate('PaymentEntry', {
+                        navParams: this.state.selected,
+                      });
+                    });
+                  }}
+                  style={styles.modalbtn}>
+                  <Text style={styles.btnmodlatxt}>Add Payment Entry</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </Modal>
+          {/* end modal */}
         </View>
       </View>
     );
@@ -238,5 +301,61 @@ const styles = StyleSheet.create({
     color: PrimaryColor,
     fontWeight: 'bold',
     fontSize: h('3%'),
+  },
+  ModalViewContainer: {
+    backgroundColor: '#fff',
+    flex: 1,
+  },
+  upermodal: {
+    // backgroundColor: 'red',
+    width: '100%',
+    height: h('33%'),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  middlemodal: {
+    // backgroundColor: 'green',
+    width: '100%',
+    height: h('33%'),
+    alignItems: 'center',
+  },
+  Bottommodal: {
+    // backgroundColor: 'yellow',
+    width: '100%',
+    height: h('33%'),
+    alignItems: 'center',
+  },
+  modltxtHeadding: {
+    color: PrimaryColor,
+    fontSize: h('3%'),
+    fontWeight: 'bold',
+  },
+  ModalView: {
+    // backgroundColor: 'green',
+    flexDirection: 'row',
+    width: '100%',
+    height: h('10%'),
+    marginTop: h('5%'),
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
+  modaltxt: {
+    color: PrimaryColor,
+    fontWeight: '600',
+    fontSize: h('2.5%'),
+    marginTop: h('1.5%'),
+  },
+  modalbtn: {
+    backgroundColor: PrimaryColor,
+    width: '40%',
+    height: h('7%'),
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: h('12%'),
+    marginTop: h('4%'),
+  },
+  btnmodlatxt: {
+    color: 'white',
+    fontSize: h('2%'),
   },
 });
