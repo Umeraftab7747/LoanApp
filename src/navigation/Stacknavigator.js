@@ -15,12 +15,18 @@ import {CustomerlistModel} from '../screens/adminscreens';
 import {Loanlist} from '../screens/adminscreens';
 import {LoanDetails} from '../screens/adminscreens';
 import {Agents} from '../screens/adminscreens';
+import {Paymentlist} from '../screens/adminscreens';
 
 export default class Stacknavigator extends Component {
   render() {
     return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="Paymentlist"
+            component={Paymentlist}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="Dashboard"
             component={Dashboard}
