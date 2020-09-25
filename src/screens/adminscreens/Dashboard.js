@@ -162,19 +162,6 @@ export class Dashboard extends Component {
                 </View>
               </TouchableOpacity>
               {/* btn3 */}
-              <TouchableOpacity style={styles.btnContainrs}>
-                <View style={styles.upper}>
-                  <Icon
-                    reverse
-                    name="folder-sharp"
-                    type="ionicon"
-                    color={PrimaryColor}
-                  />
-                </View>
-                <View style={styles.lower}>
-                  <Text style={styles.Btntxt}>Loan Pending</Text>
-                </View>
-              </TouchableOpacity>
             </View>
             {/* end */}
           </ScrollView>

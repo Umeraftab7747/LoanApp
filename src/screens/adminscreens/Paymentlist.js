@@ -15,7 +15,8 @@ import {
 } from 'react-native-responsive-screen';
 import {KeyboardAwareScrollView} from '@codler/react-native-keyboard-aware-scroll-view';
 import {PrimaryColor} from '../color';
-import {ApptextInput, Appbtn, Navheader, Searchbar} from '../../components';
+
+import {Navheader, Searchbar} from '../../components';
 import {Icon} from 'react-native-elements';
 
 export class Paymentlist extends Component {
@@ -213,6 +214,13 @@ export class Paymentlist extends Component {
             }}>
             <View style={styles.ModalViewContainer}>
               <View style={styles.upermodal}>
+                <Text
+                  style={[
+                    styles.report,
+                    {fontSize: h('5%'), marginBottom: h('3%')},
+                  ]}>
+                  Report
+                </Text>
                 <Text style={styles.modltxtHeadding}>
                   Name: {this.state.selected.title}
                 </Text>
@@ -245,6 +253,16 @@ export class Paymentlist extends Component {
                   }}
                   style={styles.modalbtn}>
                   <Text style={styles.btnmodlatxt}>Add Payment Entry</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.imgContianer}>
+                  <Icon
+                    reverse
+                    name="document-attach-sharp"
+                    type="ionicon"
+                    color={PrimaryColor}
+                    size={25}
+                  />
+                  <Text style={styles.report}>Download Report</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -335,7 +353,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     height: h('10%'),
-    marginTop: h('5%'),
+    marginTop: h('2%'),
     justifyContent: 'space-evenly',
     alignItems: 'center',
   },
@@ -357,5 +375,19 @@ const styles = StyleSheet.create({
   btnmodlatxt: {
     color: 'white',
     fontSize: h('2%'),
+  },
+  imgContianer: {
+    // backgroundColor: 'red',
+    width: '60%',
+    height: h('8%'),
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: h('5%'),
+  },
+  report: {
+    color: PrimaryColor,
+    fontSize: h('2%'),
+    fontWeight: 'bold',
   },
 });

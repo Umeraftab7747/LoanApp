@@ -19,6 +19,7 @@ import {Paymentlist} from '../screens/adminscreens';
 import {PaymentEntry} from '../screens/adminscreens';
 import {PendingPaymentlist} from '../screens/adminscreens';
 import {PaymentListDetails} from '../screens/adminscreens';
+import {EmpDashboard} from '../screens/employe';
 
 export default class Stacknavigator extends Component {
   render() {
@@ -26,10 +27,16 @@ export default class Stacknavigator extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
+            name="EmpDashboard"
+            component={EmpDashboard}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
             name="Dashboard"
             component={Dashboard}
             options={{headerShown: false}}
           />
+
           <Stack.Screen
             name="PendingPaymentlist"
             component={PendingPaymentlist}
