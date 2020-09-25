@@ -54,27 +54,17 @@ export class PendingPaymentlist extends Component {
         title: 'Ali',
         pending: 'Pending',
       },
-      {
-        id: '2',
-        title: 'Kashif',
-      },
+
       {
         id: '3',
         title: 'Asmat',
         pending: 'Pending',
       },
-      {
-        id: '4',
-        title: 'kamran',
-      },
+
       {
         id: '5',
         title: 'Akush',
         pending: 'Pending',
-      },
-      {
-        id: '6',
-        title: 'jain',
       },
     ],
 
@@ -124,6 +114,7 @@ export class PendingPaymentlist extends Component {
       </View>
     </TouchableOpacity>
   );
+
   render() {
     return (
       <View style={styles.container}>

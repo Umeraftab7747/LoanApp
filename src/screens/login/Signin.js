@@ -17,34 +17,70 @@ import {PrimaryColor} from '../color';
 import {ApptextInput, Appbtn} from '../../components';
 
 export class Signin extends Component {
+  state = {
+    email: '',
+    Password: '',
+  };
+
+  validate = () => {
+    const {email, Password} = this.state;
+    if (email === 'admin') {
+      if (Password === '1234') {
+        this.props.navigation.replace('Dashboard');
+      }
+    } else {
+      if (email === 'emp') {
+        if (Password === '123') {
+          this.props.navigation.replace('EmpDashboard');
+        }
+      }
+    }
+  };
+
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.top}>
-          <Text style={styles.Singntxt}>Signin</Text>
+      <KeyboardAwareScrollView>
+        <View style={styles.container}>
+          <View style={styles.top}>
+            <Text style={styles.Singntxt}>Signin</Text>
+          </View>
+          <View style={styles.middle}>
+            <ApptextInput
+              onChangeText={(email) => {
+                this.setState({email});
+              }}
+              name={'EMAIL'}
+              txtcolor={PrimaryColor}
+            />
+            <ApptextInput
+              onChangeText={(Password) => {
+                this.setState({Password});
+              }}
+              name={'Password'}
+              txtcolor={PrimaryColor}
+              secureTextEntry={true}
+            />
+            <Appbtn
+              onPress={() => {
+                // this.props.navigation.replace('Dashboard');
+                this.validate();
+              }}
+              text={'Signin'}
+            />
+          </View>
+          <View style={styles.bottom}>
+            <TouchableOpacity
+              onPress={() => {
+                this.props.navigation.navigate('Signup');
+              }}
+              style={styles.bottomview}>
+              <Text style={styles.SignUptext}>
+                SignUp! if you dont have Account
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.middle}>
-          <ApptextInput name={'EMAIL'} txtcolor={PrimaryColor} />
-          <ApptextInput
-            name={'Password'}
-            txtcolor={PrimaryColor}
-            secureTextEntry={true}
-          />
-          <Appbtn
-            onPress={() => {
-              this.props.navigation.replace('Dashboard');
-            }}
-            text={'Signin'}
-          />
-        </View>
-        <View style={styles.bottom}>
-          <TouchableOpacity style={styles.bottomview}>
-            <Text style={styles.SignUptext}>
-              SignUp! if you dont have Account
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      </KeyboardAwareScrollView>
     );
   }
 }

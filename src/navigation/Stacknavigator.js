@@ -27,6 +27,11 @@ export default class Stacknavigator extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
+            name="Signin"
+            component={Signin}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
             name="EmpDashboard"
             component={EmpDashboard}
             options={{headerShown: false}}
@@ -84,11 +89,7 @@ export default class Stacknavigator extends Component {
             component={CustomerlistModel}
             options={{headerShown: false}}
           />
-          <Stack.Screen
-            name="Signin"
-            component={Signin}
-            options={{headerShown: false}}
-          />
+
           <Stack.Screen
             name="AddloanModal"
             component={AddloanModal}
