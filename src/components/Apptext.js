@@ -13,6 +13,7 @@ export class Apptext extends Component {
       <View style={styles.container}>
         <TextInput
           {...this.props}
+          value={this.props.value}
           style={styles.txtinput}
           placeholder={this.props.name}
           placeholderTextColor={'#1d2d50'}

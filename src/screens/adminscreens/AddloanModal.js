@@ -42,6 +42,13 @@ export class AddloanModal extends Component {
     this.setState({txt: xyz});
   };
 
+  // Totalloan = (text) => {
+  //   const {Intrest, PrincipalAmount, Totalloan} = this.state;
+  //   const total = Intrest + PrincipalAmount;
+  //   this.setState({Totalloan: total});
+  //   console.warn(Totalloan);
+  // };
+
   render() {
     return (
       <ScrollView>
@@ -80,19 +87,37 @@ export class AddloanModal extends Component {
                 dropDownStyle={{backgroundColor: '#fafafa'}}
                 onChangeItem={(item) =>
                   this.setState({
-                    country: item.value,
+                    Loancollection: item.value,
                   })
                 }
               />
             </View>
             {/* end */}
             <Apptext name={'Loan No'} />
-            <Apptext name={'Principal Amount'} />
-            <Apptext name={'Intrest'} />
-            <Apptext name={'Total Loan'} />
+            <Apptext
+              name={'Principal Amount'}
+              onChangeText={(PrincipalAmount) => {
+                this.setState({PrincipalAmount});
+              }}
+            />
+            <Apptext
+              name={'Intrest'}
+              onChangeText={(Intrest) => {
+                this.setState({Intrest});
+              }}
+            />
+            <Apptext name={'Total Loan'} value={this.state.Totalloan} />
             <Apptext name={'Document Charge'} />
             <Apptext name={'Net payable'} />
-            <Apptext name={'No of Weeks'} />
+            {this.state.Loancollection === 'Daily' ? (
+              <Apptext name={'No of days'} />
+            ) : null}
+            {this.state.Loancollection === 'Weekly' ? (
+              <Apptext name={'No of Weeks'} />
+            ) : null}
+            {this.state.Loancollection === 'Monthly' ? (
+              <Apptext name={'No of Months'} />
+            ) : null}
             <Apptext name={'due Amount'} />
             <View style={styles.drop}>
               <Text style={styles.txtcollection}>Due start from</Text>
