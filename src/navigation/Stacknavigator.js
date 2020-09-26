@@ -20,12 +20,18 @@ import {PaymentEntry} from '../screens/adminscreens';
 import {PendingPaymentlist} from '../screens/adminscreens';
 import {PaymentListDetails} from '../screens/adminscreens';
 import {EmpDashboard} from '../screens/employe';
+import {SplashScreen} from '../screens/splash';
 
 export default class Stacknavigator extends Component {
   render() {
     return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="SplashScreen"
+            component={SplashScreen}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="Signin"
             component={Signin}
