@@ -223,7 +223,7 @@ const styles = StyleSheet.create({
   },
   Btntxt: {
     color: PrimaryColor,
-    fontSize: h('2%'),
+    fontSize: h('1.5%'),
     fontWeight: 'bold',
   },
 });

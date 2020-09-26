@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   },
   txt: {
     color: PrimaryColor,
-    fontSize: h('4%'),
+    fontSize: h('2.5%'),
     fontWeight: 'bold',
   },
 });
