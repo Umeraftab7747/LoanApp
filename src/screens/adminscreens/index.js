@@ -13,3 +13,4 @@ export {PendingPaymentlist} from './PendingPaymentlist';
 export {PaymentListDetails} from './PaymentListDetails';
 export {Paymentlist2} from './Paymentlist2';
 export {AddCompany} from './AddCompany';
+export {ExpenseBook} from './ExpenseBook';
