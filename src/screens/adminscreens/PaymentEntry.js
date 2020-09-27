@@ -52,25 +52,44 @@ export class PaymentEntry extends Component {
             name={'Payment Entry'}
           />
           <View style={styles.scrollview}>
-            <Apptext name={'Loan No'} value={'Loan No ' + this.state.txt.id} />
-            <Apptext
+            {/* <Apptext name={'Loan No'} value={'Loan No ' + this.state.txt.id} /> */}
+            <Text style={styles.txtentry}>Loan no: {this.state.txt.id}</Text>
+            <Text style={styles.txtentry}>
+              Customer Name: {this.state.txt.title}
+            </Text>
+            <Text style={styles.txtentry}>
+              Last name: {this.state.txt.lastname}
+            </Text>
+            <Text style={styles.txtentry}>City: {this.state.txt.city}</Text>
+            <Text style={styles.txtentry}>
+              Collection Type: {this.state.txt.collectionType}
+            </Text>
+            <Text style={styles.txtentry}>
+              Due amount: {this.state.txt.dueAmount}
+            </Text>
+            <Text style={[styles.txtentry, {marginBottom: h('2%')}]}>
+              Date: 20-sep-2020
+            </Text>
+            <Appbtn text={'Qr scanner'} />
+
+            {/* <Apptext
               name={'Customer Name'}
               value={'Customer Name: ' + this.state.txt.title}
-            />
-            <Apptext
+            /> */}
+            {/* <Apptext
               name={'Last Name'}
               value={'Last Name: ' + this.state.txt.lastname}
-            />
-            <Apptext name={'City'} value={'City: ' + this.state.txt.city} />
+            /> */}
+            {/* <Apptext name={'City'} value={'City: ' + this.state.txt.city} />
             <Apptext
               name={'Collection Type'}
               value={'Collection Type: ' + this.state.txt.collectionType}
-            />
-            <Apptext
+            /> */}
+            {/* <Apptext
               name={'Due Amount'}
               value={'Due Amount: ' + this.state.txt.dueAmount}
             />
-            <Apptext name={'Date'} value={'Date: 20-sep-2020'} />
+            <Apptext name={'Date'} value={'Date: 20-sep-2020'} /> */}
 
             {/*  */}
 
@@ -119,5 +138,11 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: h('3%'),
     fontWeight: 'bold',
+  },
+  txtentry: {
+    color: 'white',
+    fontSize: h('3%'),
+    fontWeight: 'bold',
+    marginTop: h('2%'),
   },
 });
