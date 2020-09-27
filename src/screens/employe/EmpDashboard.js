@@ -42,6 +42,23 @@ export class EmpDashboard extends Component {
             {/* btn2 */}
             <TouchableOpacity
               onPress={() => {
+                // this.props.navigation.navigate('');
+              }}
+              style={styles.btnContainrs}>
+              <View style={styles.upper}>
+                <Icon
+                  reverse
+                  name="barcode-sharp"
+                  type="ionicon"
+                  color={PrimaryColor}
+                />
+              </View>
+              <View style={styles.lower}>
+                <Text style={styles.Btntxt}>QR Scanner</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
                 this.props.navigation.navigate('PendingPaymentlist');
               }}
               style={styles.btnContainrs}>

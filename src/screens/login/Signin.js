@@ -24,12 +24,12 @@ export class Signin extends Component {
 
   validate = () => {
     const {email, Password} = this.state;
-    if (email === 'admin') {
+    if (email === 'Admin') {
       if (Password === '1234') {
         this.props.navigation.replace('Dashboard');
       }
     } else {
-      if (email === 'emp') {
+      if (email === 'Emp') {
         if (Password === '123') {
           this.props.navigation.replace('EmpDashboard');
         }
