@@ -23,52 +23,64 @@ export class Customerlist extends Component {
       {
         id: '1',
         title: 'Ali',
+        address: 'xyz town punjab',
       },
       {
         id: '2',
         title: 'Kashif',
+        address: 'xyz town punjab',
       },
       {
         id: '3',
         title: 'Asmat',
+        address: 'xyz town punjab',
       },
       {
         id: '4',
         title: 'kamran',
+        address: 'xyz town punjab',
       },
       {
         id: '5',
         title: 'Akush',
+        address: 'xyz town punjab',
       },
       {
         id: '6',
         title: 'jain',
+        address: 'xyz town punjab',
       },
     ],
     FilterData: [
       {
         id: '1',
         title: 'Ali',
+        address: 'xyz town punjab',
       },
       {
         id: '2',
         title: 'Kashif',
+        address: 'xyz town punjab',
       },
       {
         id: '3',
         title: 'Asmat',
+        address: 'xyz town punjab',
       },
       {
         id: '4',
         title: 'kamran',
+        address: 'xyz town punjab',
       },
       {
         id: '5',
         title: 'Akush',
+        address: 'xyz town punjab',
       },
       {
         id: '6',
         title: 'jain',
+        address: 'xyz town punjab',
       },
     ],
 

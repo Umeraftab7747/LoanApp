@@ -32,7 +32,7 @@ export class AddloanModal extends Component {
     NoOfWeek: '',
     DueAmount: '',
     DueStartFrom: '',
-    LoanMature: '',
+    LoanMature: '7 days',
     Remark: '',
     GuranterName: '',
     Guranteraddress: '',
@@ -66,6 +66,7 @@ export class AddloanModal extends Component {
             name={'Add Loan'}
           />
           <View style={styles.scrollview}>
+            <Text style={styles.txtname}>{this.state.txt.title}</Text>
             {/* start */}
             <View style={styles.drop}>
               <Text style={styles.txtcollection}>Collection type</Text>
@@ -130,9 +131,14 @@ export class AddloanModal extends Component {
               <Text style={styles.txtcollection}>Due start from</Text>
               <DatePicker title={'Calander'} />
             </View>
-            <View style={styles.drop}>
+            {/* <View style={styles.drop}>
               <Text style={styles.txtcollection}>Loan mature</Text>
               <DatePicker title={'Calander'} />
+            </View> */}
+            <View>
+              <Text style={styles.LoanMature}>
+                Loan Mature: {this.state.LoanMature}
+              </Text>
             </View>
             <Apptext name={'Remark'} />
             <Text style={styles.gruntartxt}>Gurantar</Text>
@@ -149,7 +155,7 @@ export class AddloanModal extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    height: '150%',
+    height: '190%',
     width: '100%',
     backgroundColor: PrimaryColor,
     alignItems: 'center',
@@ -182,5 +188,18 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: h('3%'),
     fontWeight: 'bold',
+  },
+  LoanMature: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: h('3%'),
+    marginTop: h('2%'),
+    marginBottom: h('2%'),
+  },
+  txtname: {
+    color: 'white',
+    fontSize: h('3%'),
+    fontWeight: 'bold',
+    marginTop: h('2%'),
   },
 });

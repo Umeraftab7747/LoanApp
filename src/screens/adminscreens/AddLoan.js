@@ -22,53 +22,91 @@ export class AddLoan extends Component {
     DATA: [
       {
         id: '1',
-        title: 'Ali',
+        title: 'Ali (00001)',
+        sonof: 'S/O: Kamran',
+        address: 'xyz town punjab',
+        phone: 'xx-xx-xxx-x',
       },
       {
         id: '2',
-        title: 'Kashif',
+        title: 'Kashif (00002)',
+        sonof: 'S/O: Ali',
+        address: 'xyz town punjab',
+        phone: 'xx-xx-xxx-x',
       },
       {
         id: '3',
-        title: 'Asmat',
+        title: 'Asmat (00003)',
+        sonof: 'S/O: hussain',
+        address: 'xyz town punjab',
+        phone: 'xx-xx-xxx-x',
       },
       {
         id: '4',
-        title: 'kamran',
+        title: 'kamran (00004)',
+        sonof: 'S/O: Akmal',
+        address: 'xyz town punjab',
+        phone: 'xx-xx-xxx-x',
       },
+
       {
         id: '5',
-        title: 'Akush',
+        title: 'Akush (00005)',
+        sonof: 'S/O: Patwari',
+        address: 'xyz town punjab',
+        phone: 'xx-xx-xxx-x',
       },
       {
         id: '6',
-        title: 'jain',
+        title: 'jain (00006)',
+        sonof: 'S/O: Leo',
+        address: 'xyz town punjab',
+        phone: 'xx-xx-xxx-x',
       },
     ],
     FilterData: [
       {
         id: '1',
-        title: 'Ali',
+        title: 'Ali (00001)',
+        sonof: 'S/O: Kamran',
+        address: 'xyz town punjab',
+        phone: 'xx-xx-xxx-x',
       },
       {
         id: '2',
-        title: 'Kashif',
+        title: 'Kashif (00002)',
+        sonof: 'S/O: Ali',
+        address: 'xyz town punjab',
+        phone: 'xx-xx-xxx-x',
       },
       {
         id: '3',
-        title: 'Asmat',
+        title: 'Asmat (00003)',
+        sonof: 'S/O: hussain',
+        address: 'xyz town punjab',
+        phone: 'xx-xx-xxx-x',
       },
       {
         id: '4',
-        title: 'kamran',
+        title: 'kamran (00004)',
+        sonof: 'S/O: Akmal',
+        address: 'xyz town punjab',
+        phone: 'xx-xx-xxx-x',
       },
+
       {
         id: '5',
-        title: 'Akush',
+        title: 'Akush (00005)',
+        sonof: 'S/O: Patwari',
+        address: 'xyz town punjab',
+        phone: 'xx-xx-xxx-x',
       },
       {
         id: '6',
-        title: 'jain',
+        title: 'jain (00006)',
+        sonof: 'S/O: Leo',
+        address: 'xyz town punjab',
+        phone: 'xx-xx-xxx-x',
       },
     ],
 
@@ -109,8 +147,11 @@ export class AddLoan extends Component {
       }}
       style={styles.FlatContainer}>
       <View style={styles.right}>
-        <Text style={styles.ltxt}>Loan no: {item.id}</Text>
-        <Text style={styles.Ntxt}>Name: {item.title}</Text>
+        {/* <Text style={styles.ltxt}>Id no: {item.id}</Text> */}
+        <Text style={styles.Ntxt}>{item.title}</Text>
+        <Text style={styles.Ntxt}>{item.sonof}</Text>
+        <Text style={styles.Ntxt}>{item.phone}</Text>
+        <Text style={styles.Ntxt}>{item.address}</Text>
       </View>
       <View style={styles.left}></View>
     </TouchableOpacity>
@@ -183,7 +224,7 @@ const styles = StyleSheet.create({
   },
   Ntxt: {
     color: PrimaryColor,
-    fontWeight: 'bold',
-    fontSize: h('3%'),
+    // fontWeight: 'bold',
+    fontSize: h('2.5%'),
   },
 });

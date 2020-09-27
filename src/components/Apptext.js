@@ -27,7 +27,7 @@ export class Apptext extends Component {
 const styles = StyleSheet.create({
   container: {
     width: w('80%'),
-    height: h('9%'),
+    height: h('7%'),
     backgroundColor: 'white',
     borderRadius: h('1%'),
     marginTop: h('1%'),
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   txtinput: {
     width: w('80%'),
-    height: h('9%'),
+    height: h('7%'),
     paddingLeft: h('1%'),
     color: '#1d2d50',
   },

@@ -20,7 +20,7 @@ export class AddCustomer extends Component {
     Village: '',
     postOffice: '',
     city: '',
-    distric: '',
+    district: '',
     Mobile: '',
     phone: '',
     area: '',
@@ -74,15 +74,22 @@ export class AddCustomer extends Component {
               />
             </View>
             <Apptext name={'Customer LastName'} />
+
             <Apptext name={'Street'} />
             <Apptext name={'Village'} />
             <Apptext name={'Post office'} />
             <Apptext name={'City'} />
-            <Apptext name={'Distric'} />
+            <Apptext name={'district'} />
             <Apptext name={'Mobile'} />
             <Apptext name={'Phone'} />
             <Apptext name={'Area'} />
             <Apptext name={'Work Type'} />
+            <Apptext name={'Email'} />
+            <Apptext name={'Adhar No'} />
+            <Apptext name={'Landmark'} />
+
+            <Apptext name={'Reference Name'} />
+            <Apptext name={'Reference Phone'} />
             <Appbtn text={'Add Customer'} />
             {/* name */}
           </View>
@@ -99,7 +106,7 @@ const styles = StyleSheet.create({
   middle: {
     // backgroundColor: 'yellow',
     width: w('100%'),
-    height: h('150%'),
+    height: h('200%'),
     alignItems: 'center',
   },
 
