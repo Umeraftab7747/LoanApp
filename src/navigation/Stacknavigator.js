@@ -32,6 +32,11 @@ export default class Stacknavigator extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
+            name="Dashboard"
+            component={Dashboard}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
             name="SplashScreen"
             component={SplashScreen}
             options={{headerShown: false}}
@@ -39,11 +44,6 @@ export default class Stacknavigator extends Component {
           <Stack.Screen
             name="EmpDashboard"
             component={EmpDashboard}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="Dashboard"
-            component={Dashboard}
             options={{headerShown: false}}
           />
 
