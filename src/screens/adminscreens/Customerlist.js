@@ -143,7 +143,7 @@ export class Customerlist extends Component {
           />
           <TouchableOpacity
             onPress={() => {
-              this.props.navigation.navigate('AddCustomer');
+              this.props.navigation.navigate('AddLoan');
             }}
             style={styles.btnplus}>
             <Text style={styles.plus}>{'+'}</Text>
