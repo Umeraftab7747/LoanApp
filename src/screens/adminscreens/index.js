@@ -11,3 +11,4 @@ export {Paymentlist} from './Paymentlist';
 export {PaymentEntry} from './PaymentEntry';
 export {PendingPaymentlist} from './PendingPaymentlist';
 export {PaymentListDetails} from './PaymentListDetails';
+export {Paymentlist2} from './Paymentlist2';

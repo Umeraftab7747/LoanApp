@@ -19,7 +19,7 @@ import {PrimaryColor} from '../color';
 import {Navheader, Searchbar} from '../../components';
 import {Icon} from 'react-native-elements';
 
-export class Paymentlist extends Component {
+export class Paymentlist2 extends Component {
   state = {
     DATA: [
       {
@@ -147,7 +147,7 @@ export class Paymentlist extends Component {
     ],
 
     selected: '',
-    modalVisible: false,
+    modalVisible: true,
   };
 
   searching = (text) => {
@@ -167,11 +167,11 @@ export class Paymentlist extends Component {
       // }}
       onPress={() => {
         this.setState({selected: item}, () => {
-          // this.setState({modalVisible: true});
-          this.props.navigation.navigate('PaymentEntry', {
-            navParams: item,
-          });
+          this.setState({modalVisible: true});
         });
+        // this.props.navigation.navigate('PaymentEntry', {
+        //   navParams: item,
+        // });
       }}
       style={styles.FlatContainer}>
       <View style={styles.right}>
@@ -186,7 +186,7 @@ export class Paymentlist extends Component {
     return (
       <View style={styles.container}>
         <Navheader
-          name={'Payment Entry'}
+          name={'Payment List'}
           onPress={() => {
             this.props.navigation.goBack('Dashboard');
           }}
@@ -205,7 +205,7 @@ export class Paymentlist extends Component {
             />
           </View>
           {/* modal */}
-          {/* <Modal
+          <Modal
             animationType="slide"
             transparent={true}
             visible={this.state.modalVisible}
@@ -243,17 +243,25 @@ export class Paymentlist extends Component {
                 <Text style={styles.modaltxt}>Total dues: 6000inr</Text>
               </View>
               <View style={styles.Bottommodal}>
-                <TouchableOpacity
-                  onPress={() => {
-                    this.setState({modalVisible: false}, () => {
-                      this.props.navigation.navigate('PaymentEntry', {
-                        navParams: this.state.selected,
+                <View style={styles.modalContainerViews}>
+                  <TouchableOpacity style={styles.appbtn2}>
+                    <Text style={styles.btntxt}>Update</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => {}} style={styles.appbtn}>
+                    <Text style={styles.btntxt}>Delete</Text>
+                  </TouchableOpacity>
+                </View>
+                {/* <TouchableOpacity
+                    onPress={() => {
+                      this.setState({modalVisible: false}, () => {
+                        this.props.navigation.navigate('PaymentEntry', {
+                          navParams: this.state.selected,
+                        });
                       });
-                    });
-                  }}
-                  style={styles.modalbtn}>
-                  <Text style={styles.btnmodlatxt}>Add Payment Entry</Text>
-                </TouchableOpacity>
+                    }}
+                    style={styles.modalbtn}>
+                    <Text style={styles.btnmodlatxt}>Add Payment Entry</Text>
+                  </TouchableOpacity> */}
                 <TouchableOpacity style={styles.imgContianer}>
                   <Icon
                     reverse
@@ -266,7 +274,7 @@ export class Paymentlist extends Component {
                 </TouchableOpacity>
               </View>
             </View>
-          </Modal> */}
+          </Modal>
           {/* end modal */}
         </View>
       </View>
@@ -389,5 +397,34 @@ const styles = StyleSheet.create({
     color: PrimaryColor,
     fontSize: h('2%'),
     fontWeight: 'bold',
+  },
+  modalContainerViews: {
+    // backgroundColor: 'yellow',
+    width: '100%',
+    height: h('10%'),
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+  appbtn: {
+    backgroundColor: 'tomato',
+    width: '30%',
+    height: h('7%'),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: h('10%'),
+  },
+  btntxt: {
+    color: 'white',
+    fontSize: h('2%'),
+    fontWeight: 'bold',
+  },
+  appbtn2: {
+    backgroundColor: 'dodgerblue',
+    width: '30%',
+    height: h('7%'),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: h('10%'),
   },
 });

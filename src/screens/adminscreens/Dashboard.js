@@ -46,6 +46,23 @@ export class Dashboard extends Component {
                 <Text style={styles.Btntxt}>Add Customer</Text>
               </View>
             </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                this.props.navigation.navigate('AddCustomer');
+              }}
+              style={styles.btnContainrs}>
+              <View style={styles.upper}>
+                <Icon
+                  reverse
+                  name="barcode-sharp"
+                  type="ionicon"
+                  color={PrimaryColor}
+                />
+              </View>
+              <View style={styles.lower}>
+                <Text style={styles.Btntxt}>QR Scanner</Text>
+              </View>
+            </TouchableOpacity>
             {/* btn2 */}
             <TouchableOpacity
               onPress={() => {
@@ -141,6 +158,23 @@ export class Dashboard extends Component {
                 </View>
                 <View style={styles.lower}>
                   <Text style={styles.Btntxt}>Pending Payment</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  this.props.navigation.navigate('Paymentlist2');
+                }}
+                style={styles.btnContainrs}>
+                <View style={styles.upper}>
+                  <Icon
+                    reverse
+                    name="albums-sharp"
+                    type="ionicon"
+                    color={PrimaryColor}
+                  />
+                </View>
+                <View style={styles.lower}>
+                  <Text style={styles.Btntxt}>Payment List</Text>
                 </View>
               </TouchableOpacity>
               {/* btn2 */}
