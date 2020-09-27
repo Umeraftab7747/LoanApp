@@ -4,3 +4,4 @@ export {Appbtn} from './Appbtn';
 export {Navheader} from './Navheader';
 export {Searchbar} from './Searchbar';
 export {DatePicker} from './DatePicker';
+export {TextinputField} from './TextinputField';
