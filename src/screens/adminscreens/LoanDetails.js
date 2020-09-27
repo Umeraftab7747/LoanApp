@@ -38,10 +38,13 @@ export class LoanDetails extends Component {
         />
 
         <View style={styles.containerView}>
-          <View style={styles.views}>
-            <Text style={styles.textdetails}>
-              ALL LOAN DETAILS WILL BE SHOWN HERE FROM BACKEND
-            </Text>
+          <View style={styles.btnContianer}>
+            <TouchableOpacity onPress={() => {}} style={styles.appbtn}>
+              <Text style={styles.btntxt}>Delete</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.appbtn2}>
+              <Text style={styles.btntxt}>Update</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.views}>
             <Text style={styles.htext}>Name: </Text>
@@ -97,5 +100,34 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: h('2%'),
+  },
+  btnContianer: {
+    // backgroundColor: 'yellow',
+    width: '100%',
+    height: h('10%'),
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+  appbtn: {
+    backgroundColor: 'tomato',
+    width: '30%',
+    height: h('7%'),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: h('10%'),
+  },
+  btntxt: {
+    color: 'white',
+    fontSize: h('2%'),
+    fontWeight: 'bold',
+  },
+  appbtn2: {
+    backgroundColor: 'dodgerblue',
+    width: '30%',
+    height: h('7%'),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: h('10%'),
   },
 });

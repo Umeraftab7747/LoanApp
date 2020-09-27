@@ -27,6 +27,15 @@ export class CustomerlistModel extends Component {
     this.setState({txt: xyz});
   };
 
+  // removeByItem = (item) => {
+  //   const data = this.state.FilterData;
+  //   const index = data.indexOf(item);
+  //   if (index > -1) {
+  //     data.splice(index, 1);
+  //   }
+  //   this.setState({FilterData: data});
+  // };
+
   render() {
     return (
       <View style={styles.container}>
@@ -38,6 +47,14 @@ export class CustomerlistModel extends Component {
         />
 
         <View style={styles.containerView}>
+          <View style={styles.btnContianer}>
+            <TouchableOpacity onPress={() => {}} style={styles.appbtn}>
+              <Text style={styles.btntxt}>Delete</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.appbtn2}>
+              <Text style={styles.btntxt}>Update</Text>
+            </TouchableOpacity>
+          </View>
           <View style={styles.views}>
             <Text style={styles.htext}>Id: </Text>
             <Text style={styles.ttext}>{this.state.txt.id}</Text>
@@ -78,5 +95,34 @@ const styles = StyleSheet.create({
   ttext: {
     color: 'white',
     fontSize: h('3%'),
+  },
+  btnContianer: {
+    // backgroundColor: 'yellow',
+    width: '100%',
+    height: h('10%'),
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+  appbtn: {
+    backgroundColor: 'tomato',
+    width: '30%',
+    height: h('7%'),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: h('10%'),
+  },
+  btntxt: {
+    color: 'white',
+    fontSize: h('2%'),
+    fontWeight: 'bold',
+  },
+  appbtn2: {
+    backgroundColor: 'dodgerblue',
+    width: '30%',
+    height: h('7%'),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: h('10%'),
   },
 });
