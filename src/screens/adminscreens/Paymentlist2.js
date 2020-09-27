@@ -147,7 +147,7 @@ export class Paymentlist2 extends Component {
     ],
 
     selected: '',
-    modalVisible: true,
+    modalVisible: false,
   };
 
   searching = (text) => {
