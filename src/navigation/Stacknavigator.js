@@ -24,6 +24,7 @@ import {SplashScreen} from '../screens/splash';
 import {Paymentlist2} from '../screens/adminscreens';
 import {AddCompany} from '../screens/adminscreens';
 import {ExpenseBook} from '../screens/adminscreens';
+import {ExpenseList} from '../screens/adminscreens';
 
 export default class Stacknavigator extends Component {
   render() {
@@ -46,6 +47,11 @@ export default class Stacknavigator extends Component {
             options={{headerShown: false}}
           />
 
+          <Stack.Screen
+            name="ExpenseList"
+            component={ExpenseList}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="ExpenseBook"
             component={ExpenseBook}
