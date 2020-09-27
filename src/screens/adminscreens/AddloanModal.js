@@ -1,3 +1,5 @@
+/* eslint-disable radix */
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/self-closing-comp */
 import React, {Component} from 'react';
 import {
@@ -50,6 +52,10 @@ export class AddloanModal extends Component {
   // };
 
   render() {
+    var f1 = this.state.Intrest;
+    var f2 = this.state.PrincipalAmount;
+    const result = f1 && f2 ? f2 + f1 : null;
+
     return (
       <ScrollView>
         <View style={styles.container}>
@@ -96,17 +102,18 @@ export class AddloanModal extends Component {
             <Apptext name={'Loan No'} />
             <Apptext
               name={'Principal Amount'}
-              onChangeText={(PrincipalAmount) => {
-                this.setState({PrincipalAmount});
+              onChangeText={(text) => {
+                this.setState({PrincipalAmount: parseInt(text)});
               }}
             />
             <Apptext
               name={'Intrest'}
-              onChangeText={(Intrest) => {
-                this.setState({Intrest});
+              onChangeText={(text) => {
+                this.setState({Intrest: parseInt(text)});
               }}
             />
-            <Apptext name={'Total Loan'} value={this.state.Totalloan} />
+            <Text style={styles.total}>Total: {result}</Text>
+            {/* <Apptext name={'Total Loan'} value={result} /> */}
             <Apptext name={'Document Charge'} />
             <Apptext name={'Net payable'} />
             {this.state.Loancollection === 'Daily' ? (
@@ -167,6 +174,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   gruntartxt: {
+    color: 'white',
+    fontSize: h('3%'),
+    fontWeight: 'bold',
+  },
+  total: {
     color: 'white',
     fontSize: h('3%'),
     fontWeight: 'bold',
