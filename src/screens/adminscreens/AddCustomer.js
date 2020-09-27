@@ -85,7 +85,7 @@ export class AddCustomer extends Component {
             <Apptext name={'Area'} />
             <Apptext name={'Work Type'} />
             <Apptext name={'Email'} />
-            <Apptext name={'Adhar No'} />
+            <Apptext name={'Aadhaar No'} />
             <Apptext name={'Landmark'} />
 
             <Apptext name={'Reference Name'} />

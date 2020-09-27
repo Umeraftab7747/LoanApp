@@ -141,6 +141,13 @@ export class Customerlist extends Component {
             txtcolor={PrimaryColor}
             onChangeText={(text) => this.searching(text)}
           />
+          <TouchableOpacity
+            onPress={() => {
+              this.props.navigation.navigate('AddCustomer');
+            }}
+            style={styles.btnplus}>
+            <Text style={styles.plus}>{'+'}</Text>
+          </TouchableOpacity>
         </View>
         {/* flatlist */}
         <FlatList
@@ -163,8 +170,9 @@ const styles = StyleSheet.create({
   },
   middle: {
     // backgroundColor: 'yellow',
-
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-evenly',
   },
   FlatContainer: {
     backgroundColor: 'white',
@@ -196,5 +204,17 @@ const styles = StyleSheet.create({
     color: PrimaryColor,
     fontWeight: 'bold',
     fontSize: h('3%'),
+  },
+  btnplus: {
+    backgroundColor: 'white',
+    width: w('12%'),
+    height: h('7%'),
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: h('30%'),
+  },
+  plus: {
+    color: PrimaryColor,
+    fontSize: h('2.5%'),
   },
 });
