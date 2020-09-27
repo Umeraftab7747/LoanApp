@@ -33,7 +33,7 @@ export class Dashboard extends Component {
 
               <TouchableOpacity
                 onPress={() => {
-                  this.props.navigation.navigate('Paymentlist2');
+                  this.props.navigation.navigate('AddCompany');
                 }}
                 style={styles.btnContainrs}>
                 <View style={styles.upper}>

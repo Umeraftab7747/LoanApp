@@ -22,6 +22,7 @@ import {PaymentListDetails} from '../screens/adminscreens';
 import {EmpDashboard} from '../screens/employe';
 import {SplashScreen} from '../screens/splash';
 import {Paymentlist2} from '../screens/adminscreens';
+import {AddCompany} from '../screens/adminscreens';
 
 export default class Stacknavigator extends Component {
   render() {
@@ -44,6 +45,11 @@ export default class Stacknavigator extends Component {
             options={{headerShown: false}}
           />
 
+          <Stack.Screen
+            name="AddCompany"
+            component={AddCompany}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="Paymentlist2"
             component={Paymentlist2}
