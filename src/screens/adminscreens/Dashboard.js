@@ -88,7 +88,7 @@ export class Dashboard extends Component {
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  this.props.navigation.navigate('');
+                  // this.props.navigation.navigate('');
                 }}
                 style={styles.btnContainrs}>
                 <View style={styles.upper}>
