@@ -119,7 +119,7 @@ export class Dashboard extends Component {
                   />
                 </View>
                 <View style={styles.lower}>
-                  <Text style={styles.Btntxt}>Payments list</Text>
+                  <Text style={styles.Btntxt}>Payments Entry</Text>
                 </View>
               </TouchableOpacity>
             </View>

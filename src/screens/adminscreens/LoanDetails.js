@@ -39,11 +39,11 @@ export class LoanDetails extends Component {
 
         <View style={styles.containerView}>
           <View style={styles.btnContianer}>
-            <TouchableOpacity onPress={() => {}} style={styles.appbtn}>
-              <Text style={styles.btntxt}>Delete</Text>
-            </TouchableOpacity>
             <TouchableOpacity style={styles.appbtn2}>
               <Text style={styles.btntxt}>Update</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {}} style={styles.appbtn}>
+              <Text style={styles.btntxt}>Delete</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.views}>

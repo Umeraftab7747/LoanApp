@@ -53,6 +53,7 @@ export class PaymentEntry extends Component {
           />
           <View style={styles.scrollview}>
             {/* <Apptext name={'Loan No'} value={'Loan No ' + this.state.txt.id} /> */}
+            <Appbtn text={'Qr scanner'} />
             <Text style={styles.txtentry}>Loan no: {this.state.txt.id}</Text>
             <Text style={styles.txtentry}>
               Customer Name: {this.state.txt.title}
@@ -70,7 +71,6 @@ export class PaymentEntry extends Component {
             <Text style={[styles.txtentry, {marginBottom: h('2%')}]}>
               Date: 20-sep-2020
             </Text>
-            <Appbtn text={'Qr scanner'} />
 
             {/* <Apptext
               name={'Customer Name'}
