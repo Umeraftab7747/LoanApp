@@ -178,7 +178,7 @@ export class AddLoan extends Component {
             style={styles.btnplus}>
             <Text style={styles.plus}>{'+'}</Text>
           </TouchableOpacity>
-        </View>ss
+        </View>
         {/* flatlist */}
         <FlatList
           data={this.state.FilterData}
