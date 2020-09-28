@@ -263,7 +263,7 @@ export class Paymentlist extends Component {
                     size={25}
                   />
                   <Text style={styles.report}>Download Report</Text>
-                </TouchableOpacity>
+                </TouchableOpacity>s
               </View>
             </View>
           </Modal> */}

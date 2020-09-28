@@ -52,7 +52,7 @@ export class ExpenseBook extends Component {
                   this.setState({checked: 'second'});
                 }}
               />
-              <Text style={styles.txt}>Profit</Text>
+              <Text style={styles.txt}>Income</Text>
             </View>
           </View>
         </View>
