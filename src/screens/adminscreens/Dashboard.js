@@ -27,46 +27,7 @@ export class Dashboard extends Component {
           </View>
           <View style={styles.middle}>
             {/* 1 */}
-            <View style={styles.ContainerView}>
-              {/* btn1 */}
 
-              <TouchableOpacity
-                onPress={() => {
-                  this.props.navigation.navigate('AddCompany');
-                }}
-                style={styles.btnContainrs}>
-                <View style={styles.upper}>
-                  <Icon
-                    reverse
-                    name="business-sharp"
-                    type="ionicon"
-                    color={PrimaryColor}
-                  />
-                </View>
-                <View style={styles.lower}>
-                  <Text style={styles.Btntxt}>Company Profile</Text>
-                </View>
-              </TouchableOpacity>
-              {/* btn2 */}
-              <TouchableOpacity
-                onPress={() => {
-                  this.props.navigation.navigate('ExpenseList');
-                }}
-                style={styles.btnContainrs}>
-                <View style={styles.upper}>
-                  <Icon
-                    reverse
-                    name="book-sharp"
-                    type="ionicon"
-                    color={PrimaryColor}
-                  />
-                </View>
-                <View style={styles.lower}>
-                  <Text style={styles.Btntxt}>Expense Book</Text>
-                </View>
-              </TouchableOpacity>
-              {/* btn3 */}
-            </View>
             <View style={styles.ContainerView}>
               {/* btn1 */}
               <TouchableOpacity
@@ -88,21 +49,22 @@ export class Dashboard extends Component {
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  // this.props.navigation.navigate('');
+                  this.props.navigation.navigate('Loanlist');
                 }}
                 style={styles.btnContainrs}>
                 <View style={styles.upper}>
                   <Icon
                     reverse
-                    name="barcode-sharp"
+                    name="document-text-sharp"
                     type="ionicon"
                     color={PrimaryColor}
                   />
                 </View>
                 <View style={styles.lower}>
-                  <Text style={styles.Btntxt}>QR Scanner</Text>
+                  <Text style={styles.Btntxt}>Loan List</Text>
                 </View>
               </TouchableOpacity>
+
               {/* btn2 */}
               <TouchableOpacity
                 onPress={() => {
@@ -144,21 +106,22 @@ export class Dashboard extends Component {
                   </View>
                 </TouchableOpacity>
                 {/* btn2 */}
+
                 <TouchableOpacity
                   onPress={() => {
-                    this.props.navigation.navigate('Loanlist');
+                    // this.props.navigation.navigate('');
                   }}
                   style={styles.btnContainrs}>
                   <View style={styles.upper}>
                     <Icon
                       reverse
-                      name="document-text-sharp"
+                      name="barcode-sharp"
                       type="ionicon"
                       color={PrimaryColor}
                     />
                   </View>
                   <View style={styles.lower}>
-                    <Text style={styles.Btntxt}>Loan List</Text>
+                    <Text style={styles.Btntxt}>QR Scanner</Text>
                   </View>
                 </TouchableOpacity>
                 {/* btn3 */}
@@ -237,7 +200,46 @@ export class Dashboard extends Component {
                 </TouchableOpacity>
                 {/* btn4 */}
               </View>
+              <View style={styles.ContainerView}>
+                {/* btn1 */}
 
+                <TouchableOpacity
+                  onPress={() => {
+                    this.props.navigation.navigate('AddCompany');
+                  }}
+                  style={styles.btnContainrs}>
+                  <View style={styles.upper}>
+                    <Icon
+                      reverse
+                      name="business-sharp"
+                      type="ionicon"
+                      color={PrimaryColor}
+                    />
+                  </View>
+                  <View style={styles.lower}>
+                    <Text style={styles.Btntxt}>Company Profile</Text>
+                  </View>
+                </TouchableOpacity>
+                {/* btn2 */}
+                <TouchableOpacity
+                  onPress={() => {
+                    this.props.navigation.navigate('ExpenseList');
+                  }}
+                  style={styles.btnContainrs}>
+                  <View style={styles.upper}>
+                    <Icon
+                      reverse
+                      name="book-sharp"
+                      type="ionicon"
+                      color={PrimaryColor}
+                    />
+                  </View>
+                  <View style={styles.lower}>
+                    <Text style={styles.Btntxt}>Expense Book</Text>
+                  </View>
+                </TouchableOpacity>
+                {/* btn3 */}
+              </View>
               {/* end */}
             </ScrollView>
           </View>
@@ -254,7 +256,7 @@ const styles = StyleSheet.create({
   top: {
     backgroundColor: 'white',
     width: w('100%'),
-    height: h('10%'),
+    height: h('6%'),
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -265,7 +267,7 @@ const styles = StyleSheet.create({
   },
 
   Singntxt: {
-    fontSize: h('5%'),
+    fontSize: h('3.5%'),
     fontWeight: 'bold',
     color: PrimaryColor,
   },

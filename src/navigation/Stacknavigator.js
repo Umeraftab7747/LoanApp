@@ -41,6 +41,7 @@ export default class Stacknavigator extends Component {
             component={SplashScreen}
             options={{headerShown: false}}
           />
+
           <Stack.Screen
             name="EmpDashboard"
             component={EmpDashboard}

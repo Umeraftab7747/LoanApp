@@ -11,10 +11,11 @@ import {PrimaryColor} from '../color';
 import {Apptext, Appbtn, Navheader, TextinputField} from '../../components';
 import DropDownPicker from 'react-native-dropdown-picker';
 import {CheckBox} from 'native-base';
+import {RadioButton} from 'react-native-paper';
 
 export class ExpenseBook extends Component {
   state = {
-    profit: true,
+    checked: false,
     loss: false,
   };
   render() {
@@ -28,22 +29,31 @@ export class ExpenseBook extends Component {
         />
         <View style={styles.ViewCOntainer}>
           <View style={styles.checkbox}>
-            <CheckBox
-              checked={this.state.profit}
-              onPress={() => {
-                this.setState({profit: !this.state.profit});
-              }}
-            />
-            <Text style={styles.txt}>PROFIT</Text>
-          </View>
-          <View style={styles.checkbox}>
-            <CheckBox
-              checked={this.state.loss}
-              onPress={() => {
-                this.setState({loss: !this.state.loss});
-              }}
-            />
-            <Text style={styles.txt}>LOSS</Text>
+            <View style={styles.radio}>
+              <RadioButton
+                value="first"
+                color={'tomato'}
+                status={
+                  this.state.checked === 'first' ? 'checked' : 'unchecked'
+                }
+                onPress={() => {
+                  this.setState({checked: 'first'});
+                }}
+              />
+              <Text style={styles.txt}>Expense</Text>
+            </View>
+            <View style={styles.radio}>
+              <RadioButton
+                value="first"
+                status={
+                  this.state.checked === 'second' ? 'checked' : 'unchecked'
+                }
+                onPress={() => {
+                  this.setState({checked: 'second'});
+                }}
+              />
+              <Text style={styles.txt}>Profit</Text>
+            </View>
           </View>
         </View>
         <Apptext name={'Amount'} />
@@ -87,7 +97,7 @@ const styles = StyleSheet.create({
   },
   checkbox: {
     // backgroundColor: 'red',
-    width: '30%',
+    width: '60%',
     height: '20%',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
@@ -97,5 +107,10 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: h('2%'),
+  },
+  radio: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
   },
 });
