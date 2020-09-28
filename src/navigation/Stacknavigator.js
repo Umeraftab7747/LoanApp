@@ -26,11 +26,18 @@ import {AddCompany} from '../screens/adminscreens';
 import {ExpenseBook} from '../screens/adminscreens';
 import {ExpenseList} from '../screens/adminscreens';
 
+import {Drawernavigator} from './Drawernavigator';
+
 export default class Stacknavigator extends Component {
   render() {
     return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="Drawernavigator"
+            component={Drawernavigator}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="Dashboard"
             component={Dashboard}
